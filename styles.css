@@ -316,11 +316,98 @@ section {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-  .hero h1 {
+  :root {
+    --section-padding: 3rem 1rem;
+    /* Reduced from 4rem */
+  }
+
+  /* Typography */
+  h1 {
     font-size: 2rem;
+    line-height: 1.25;
   }
 
   h2 {
     font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+    /* Better balance than 2rem but smaller than 3rem */
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Layout Spacing */
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+    /* Slightly more breathing room on edges */
+  }
+
+  .card {
+    padding: 1.5rem;
+    /* Save space inside cards */
+  }
+
+  /* Grids & Flex */
+  .plans-grid,
+  .options-grid {
+    gap: 1.5rem;
+    /* Tighten gaps */
+  }
+
+  /* Terminology List Mobile Override */
+  .term-list dl {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .term-list dt {
+    margin-bottom: 0.25rem;
+  }
+
+  .term-list dd {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid #e5e7eb;
+  }
+
+  /* Button touch targets */
+  .btn {
+    width: 100%;
+    /* Full width buttons often feel better on mobile */
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
   }
 }
