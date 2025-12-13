@@ -13,7 +13,8 @@
   --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --section-padding: 4rem 1rem;
   --max-width: 1200px;
-  --font-family: 'Noto Sans JP', sans-serif;
+  /* System fonts are often the most legible and "thickest" rendering on native devices */
+  --font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 /* Reset & Base */
@@ -27,14 +28,15 @@
 
 body {
   font-family: var(--font-family);
-  color: #111827;
-  /* Near black for sharpness */
+  color: #000000;
+  /* Pure black for maximum strength */
   background: var(--bg-color);
   background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   line-height: 1.75;
   font-weight: 500;
   /* Increased from normal (400) to Medium (500) */
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: auto;
+  /* Disable antialiasing smoothing which thins text */
 }
 
 img {
