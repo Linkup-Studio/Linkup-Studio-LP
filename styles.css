@@ -154,6 +154,10 @@ p {
   text-align: center;
 }
 
+.br-sp {
+  display: none;
+}
+
 .text-sm {
   font-size: 0.875rem;
 }
@@ -392,6 +396,12 @@ section {
   /* Utilities */
   .br-pc {
     display: none;
+  }
+
+  .br-sp {
+    display: block;
+    margin-bottom: 0.5rem;
+    /* Optional: add a bit of space if needed, but block break is enough */
   }
 
   .btn {
