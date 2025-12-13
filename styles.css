@@ -355,11 +355,23 @@ section {
 
   .hero p {
     font-size: 1rem;
+    text-align: left;
+    /* Left align hero text on mobile */
   }
 
   /* Layout Spacing */
   .hero {
     padding: 3rem 1rem;
+    /* Keeping main container center, but text left */
+  }
+
+  /* Utilities Mobile */
+  .text-left-sp {
+    text-align: left !important;
+  }
+
+  .alert-box {
+    text-align: left;
   }
 
   .container {
