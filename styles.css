@@ -2,23 +2,17 @@
   --primary-color: #1D4ED8;
   /* Defined Blue */
   --primary-hover: #1e40af;
-  --bg-color: #f8fafc;
-  /* Slightly grey background for outside the phone view */
-  --content-bg: #ffffff;
+  --bg-color: #ffffff;
   --bg-gradient-start: #ffffff;
   --bg-gradient-end: #eff6ff;
   /* Pale blue */
-  --text-main: #111827;
-  /* Darker for sharpness */
-  --text-sub: #374151;
-  /* Darker subtext */
+  --text-main: #1f2937;
+  --text-sub: #4b5563;
   --text-inverse: #ffffff;
   --border-color: #e5e7eb;
   --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --section-padding: 3rem 1.5rem;
-  /* More breathing room inside mobile view */
-  --max-width: 480px;
-  /* Constrain to Smartphone width */
+  --section-padding: 4rem 1rem;
+  --max-width: 1200px;
   --font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
@@ -35,24 +29,9 @@ body {
   font-family: var(--font-family);
   color: var(--text-main);
   background: var(--bg-color);
-  line-height: 1.7;
-  /* Increased line-height for readability */
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-
-/* Main Mobile Wrapper */
-main {
-  width: 100%;
-  max-width: var(--max-width);
-  background: var(--content-bg);
   background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  /* Shadow to separate from "desktop" background */
-  min-height: 100vh;
-  position: relative;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -72,24 +51,23 @@ ul {
 
 /* Layout */
 .container {
-  width: 100%;
-  padding: 0 1.5rem;
+  max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 header {
-  padding: 1.25rem 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(5px);
+  padding: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--border-color);
-  text-align: center;
 }
 
 .logo {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
 }
@@ -101,16 +79,14 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.4;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.75rem;
-  /* Large mobile heading */
+  font-size: 2.25rem;
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   color: var(--text-main);
   position: relative;
   display: inline-block;
@@ -120,17 +96,15 @@ h2 {
 h2::after {
   content: '';
   display: block;
-  width: 50px;
+  width: 60px;
   height: 4px;
   background: var(--primary-color);
-  margin: 0.75rem auto 0;
+  margin: 1rem auto 0;
   border-radius: 2px;
 }
 
 p {
-  margin-bottom: 1.25rem;
-  font-size: 1rem;
-  /* Base 16px */
+  margin-bottom: 1rem;
 }
 
 .text-accent {
@@ -143,26 +117,20 @@ p {
 }
 
 .text-sm {
-  font-size: 0.925rem;
-  /* Slightly larger small text */
+  font-size: 0.875rem;
 }
 
 /* Components */
 .btn {
   display: inline-block;
-  padding: 1rem 2rem;
-  /* Larger touch target */
+  padding: 0.75rem 1.5rem;
   background-color: var(--primary-color);
   color: var(--text-inverse);
   font-weight: 700;
-  font-size: 1.1rem;
   border-radius: 9999px;
   transition: background-color 0.3s ease;
   cursor: pointer;
   border: none;
-  width: 100%;
-  /* Full width on mobile usually looks better for CTA */
-  text-align: center;
 }
 
 .btn:hover {
@@ -171,33 +139,37 @@ p {
 
 .card {
   background: #ffffff;
-  border-radius: 1.25rem;
-  /* Softer corners */
-  padding: 1.75rem;
+  border-radius: 1rem;
+  padding: 2rem;
   box-shadow: var(--card-shadow);
   border: 1px solid var(--border-color);
-  height: auto;
-  margin-bottom: 1.5rem;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Hero Section */
 .hero {
-  padding: 5rem 1.5rem;
+  padding: 6rem 1rem;
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  /* Big impact */
+  font-size: 3rem;
   margin-bottom: 1.5rem;
   background: -webkit-linear-gradient(45deg, var(--text-main), var(--primary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.3;
 }
 
 .hero p {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--text-sub);
 }
 
@@ -210,30 +182,29 @@ section {
   background-color: #ffffff;
 }
 
-/* Plans Grid - Stacked for Mobile */
+/* Plans Grid */
 .plans-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 .plan-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 .price {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
 
 .plan-features li {
-  margin-bottom: 1rem;
-  padding-left: 1.75rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
   position: relative;
-  font-size: 1rem;
 }
 
 .plan-features li::before {
@@ -242,34 +213,39 @@ section {
   position: absolute;
   left: 0;
   font-weight: bold;
-  font-size: 1.1rem;
 }
 
 /* Terminology */
 .term-list dl {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .term-list dl {
+    grid-template-columns: auto 1fr;
+    gap: 1rem 2rem;
+  }
 }
 
 .term-list dt {
   font-weight: 700;
   color: var(--primary-color);
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+  min-width: 180px;
 }
 
 .term-list dd {
   color: var(--text-sub);
   margin-left: 0;
-  padding-left: 1rem;
-  border-left: 3px solid #eff6ff;
 }
 
 /* Options */
 .options-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -277,15 +253,14 @@ section {
 .flow-step {
   background: white;
   padding: 1.5rem;
-  border-left: 6px solid var(--primary-color);
-  /* Thicker accent */
-  margin-bottom: 1.25rem;
+  border-left: 4px solid var(--primary-color);
+  margin-bottom: 1rem;
   border-radius: 0.5rem;
   box-shadow: var(--card-shadow);
 }
 
 .flow-step strong {
-  font-size: 1.15em;
+  font-size: 1.1em;
 }
 
 /* Note Alert */
@@ -293,17 +268,21 @@ section {
   background-color: #eff6ff;
   border: 1px solid #bfdbfe;
   color: #1e40af;
-  padding: 1.25rem;
-  border-radius: 0.75rem;
-  margin: 2rem 0;
-  text-align: left;
-  /* Easier reading on mobile */
-  font-size: 0.95rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-footer {
-  background: #f3f4f6;
-  padding: 3rem 0;
-  text-align: center;
-  color: var(--text-sub);
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
 }
