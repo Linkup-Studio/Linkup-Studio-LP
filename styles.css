@@ -389,6 +389,11 @@ section {
   }
 
   /* Button touch targets */
+  /* Utilities */
+  .br-pc {
+    display: none;
+  }
+
   .btn {
     width: 100%;
     /* Full width buttons often feel better on mobile */
