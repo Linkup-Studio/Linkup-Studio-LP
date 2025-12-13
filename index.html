@@ -249,7 +249,7 @@
     </main>
 
     <section style="text-align: center; padding: 2rem 1rem;">
-        <img src="footer_visual.jpg" alt="Footer Visual"
+        <img src="footer_visual.jpg" alt="Footer Visual" class="zoom-trigger" onclick="openLightbox(this.src)"
             style="max-width: 100%; height: auto; margin: 0 auto; display: block;">
     </section>
 
@@ -259,6 +259,23 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Full Screen Visual">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
